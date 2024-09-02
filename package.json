@@ -1,0 +1,18 @@
+{
+  "name": "mub_08simple-calculator",
+  "version": "1.0.0",
+  "description": "my simple calculator made while using Typescript,Node.js & Inquirer",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mubashir Khan",
+  "license": "MIT",
+  "dependencies": {
+    "inquirer": "^9.2.16"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^9.0.7"
+  }
+}

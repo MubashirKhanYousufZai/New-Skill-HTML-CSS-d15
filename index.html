@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="index.js" rel="functionality">
+    <link href="index.css" rel="stylesheet">
+    <title>Calculator</title>
+<body>
+    <div class="calculator">
+        <h1>Calculator</h1>
+        <form id="calculatorForm">
+            <input type="number" id="firstNumber" placeholder="Enter First Number" required>
+            <input type="number" id="secondNumber" placeholder="Enter Second Number" required>
+            <select id="operator" required>
+                <option value="" disabled selected>Select an Operator</option>
+                <option value="Addition">Addition</option>
+                <option value="Subtraction">Subtraction</option>
+                <option value="Multiplication">Multiplication</option>
+                <option value="Division">Division</option>
+                <option value="Percentage">Percentage</option>
+                <option value="Exponention">Exponention</option>
+            </select>
+            <button type="button" onclick="calculate()">Calculate</button>
+            <div class="result" id="result"></div>
+        </form>
+    </div>
+    <script>
+        function calculate() {
+            const firstNumber = parseFloat(document.getElementById('firstNumber').value);
+            const secondNumber = parseFloat(document.getElementById('secondNumber').value);
+            const operator = document.getElementById('operator').value;
+            let result = 0;
+            
+            switch (operator) {
+                case 'Addition':
+                    result = firstNumber + secondNumber;
+                    break;
+                case 'Subtraction':
+                    result = firstNumber - secondNumber;
+                    break;
+                case 'Multiplication':
+                    result = firstNumber * secondNumber;
+                    break;
+                case 'Division':
+                    if (secondNumber === 0) {
+                        result = 'Cannot divide by zero';
+                    } else {
+                        result = firstNumber / secondNumber;
+                    }
+                    break;
+                case 'Percentage':
+                    result = (firstNumber / secondNumber) * 100;
+                    break;
+                case 'Exponention':
+                    result = Math.pow(firstNumber, secondNumber);
+                    break;
+                default:
+                    result = 'Please select a valid operator';
+            }
+            
+            document.getElementById('result').innerText = `Result: ${result}`;
+        }
+    </script>
+</body>
+</html>
